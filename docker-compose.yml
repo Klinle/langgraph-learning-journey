@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: langgraph_learning_app
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    stdin_open: true # 打开标准输入，支持交互
+    tty: true        # 启用伪终端
