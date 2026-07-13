@@ -16,7 +16,7 @@ def node_one(state: SimpleState) -> dict:
     current_counter = state.get("counter", 0)
     return {
         "messages": [f"Node 1 发送了问候 (计数: {current_counter + 1})"],
-        "counter": 1  # 注意：在没有指定 reducer 的键上（如 counter），默认是覆盖（Override）行为
+        "counter": current_counter + 1  # 每次累加计数，更新策略为覆盖最新的值
     }
 
 def node_two(state: SimpleState) -> dict:
